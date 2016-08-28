@@ -1,0 +1,121 @@
+* {
+	margin:0;
+	padding:0;
+}
+body  {
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color: #767676;
+}
+h1 {
+	font-size:18px;
+	color:#76aecc;
+	padding-bottom:10px;
+}
+a {
+	color:#ff0000;
+	font-size:12px;
+	text-decoration:underline;
+}
+a:hover {
+	color:#ff0000;
+	font-size:12px;
+	text-decoration:none;
+}
+.logo {
+	color:green;
+	font-size:50px;
+	font-style:normal;
+}
+.author {
+	padding-bottom:40px;
+}
+#header {
+	margin-left:20px;
+	height:130px;
+	background:url(images/uvpcelogo.png) no-repeat right top;
+	
+}
+.slogan1 {
+	padding:2px 0 0 200px;
+	color:purple;
+	font-size:20px;
+}
+.slogan2 {
+	padding:0 0 0 290px;
+	color:purple;
+	font-size:20px;
+}
+#container { 
+	width: 800px;  
+	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+} 
+.allContent {
+	background:url(../images/pageBackground.jpg) no-repeat left top;
+}
+.leftSidebar {
+	float:left;
+	width:250px;
+	padding:10px 20px;
+	margin-top:10px;
+
+}
+.rightSidebar {
+	margin-left: 270px;
+	padding:10px 20px;
+}
+.sidebarDoctor {
+	padding:10px 0 0 0;
+}
+#footer { 
+} 
+#footer p {
+	text-align:center;
+	padding:20px 0;
+}
+.clearfloat { 
+	clear:both;
+    height:0;
+    font-size: 1px;
+    line-height: 0px;
+}
+
+.mainMenu {
+	padding:30px 0 0 40px;
+	text-align:center;
+	background:url(../images/menuBackground.jpg) no-repeat left top;
+	height:80px;
+}
+ul#navlist {
+	margin-left: 0;
+	padding-left: 0;
+	white-space: nowrap;
+}
+#navlist li {
+	display: inline;
+	list-style-type: none;
+}
+#navlist a {
+	margin:0 10px;
+	padding:5px 0 0 0;
+	font-size:18px;
+	color:#ffffff;
+}
+#navlist a:link, #navlist a:visited {
+	color: #ffffff;
+	background: url(images/button.png) no-repeat left top;
+	text-decoration: none;
+	width:131px;
+	height:34px;
+	float:left;
+}
+#navlist a:hover {
+	color: #888888;
+	background: url(images/buttonActive.png) no-repeat left top;
+	text-decoration: none;
+}
+#navlist #active a {
+	color: #888888;
+	background: url(images/buttonActive.png) no-repeat left top;
+	text-decoration: none;
+}

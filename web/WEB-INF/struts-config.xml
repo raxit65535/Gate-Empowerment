@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="adminLoginForm" type="com.secureinfosoft.admin.AdminLoginForm" />
+    <form-bean name="departmentAddForm" type="com.secureinfosoft.admin.DepartmentAddForm" />
+    <form-bean name="departmentAdddForm" type="com.secureinfosoft.admin.DepartmentAdddForm" />
+    <form-bean name="adminloginForm" type="com.secureinfosoft.admin.AdminloginForm" />
+    <form-bean name="administratorLoginForm" type="com.secureinfosoft.admin.AdministratorLoginForm" />
+    <form-bean name="studentLoginForm" type="com.secureinfosoft.student.StudentLoginForm" />
+    <form-bean name="studentRegistrationForm" type="com.secureinfosoft.student.StudentRegistrationForm" />
+    <form-bean name="search_DisplayUserForm" type="com.secureinfosoft.admin.Search_DisplayUserForm" />
+    <form-bean name="search_DisplayUserLogsForm" type="com.secureinfosoft.admin.Search_DisplayUserLogsForm" />
+    <form-bean name="search_DisplayUserMarksForm" type="com.secureinfosoft.admin.Search_DisplayUserMarksForm" />
+    <form-bean name="displayTag_DisplayUserMarksForm" type="com.secureinfosoft.admin.DisplayTag_DisplayUserMarksForm" />
+    <form-bean name="coordinatorLoginForm" type="com.secureinfosoft.coordinator.CoordinatorLoginForm" />
+    <form-bean name="changePasswordForm" type="com.secureinfosoft.coordinator.ChangePasswordForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    
+    <action
+      attribute="departmentAdddForm"
+      input="admin/departmentAddd.jsp"
+      name="departmentAdddForm"
+      path="/departmentAddd"
+      scope="request"
+      type="com.secureinfosoft.admin.DepartmentAdddAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="failure"
+        path="/admin/departmentAddd.jsp?msg=Department already exist...!!"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/admin/departmentAddd.jsp?msg=department Successsfully added.."
+        redirect="true" />
+    </action>
+    <action
+      attribute="administratorLoginForm"
+      input="admin/administratorLogin.jsp"
+      name="administratorLoginForm"
+      path="/administratorLogin"
+      scope="request"
+      type="com.secureinfosoft.admin.AdministratorLoginAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="failure"
+        path="/admin/administratorLogin.jsp?msg=error in login...email or password is incorrect"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/admin/home.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="studentLoginForm"
+      input="student/studentLogin.jsp"
+      name="studentLoginForm"
+      path="/studentLogin"
+      scope="request"
+      type="com.secureinfosoft.student.StudentLoginAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="failure"
+        path="/student/studentLogin.jsp?msg=error in login...email or password is incorrect"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/student/home.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="studentRegistrationForm"
+      input="student/studentRegistration.jsp"
+      name="studentRegistrationForm"
+      path="/studentRegistration"
+      scope="request"
+      type="com.secureinfosoft.student.StudentRegistrationAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="failure"
+        path="/student/studentRegistration.jsp?msg=email already exist !!"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/student/studentLogin.jsp"
+        redirect="true" />
+    </action>
+    <action path="/demo" type="com.secureinfosoft.struts.action.DemoAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/index.jsp"
+        redirect="true" />
+    </action>
+    <action path="/displayUser" type="com.secureinfosoft.admin.DisplayUserAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/search_DisplayUser.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="search_DisplayUserForm"
+      input="admin/search_DisplayUser.jsp"
+      name="search_DisplayUserForm"
+      path="/search_DisplayUser"
+      scope="request"
+      type="com.secureinfosoft.admin.Search_DisplayUserAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/DisplayTag_DisplayUser.jsp"
+        redirect="true" />
+    </action>
+    <action path="/displayUserLogs" type="com.secureinfosoft.admin.DisplayUserLogsAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/search_DisplayUserLogs.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="search_DisplayUserLogsForm"
+      input="admin/search_DisplayUserLogs.jsp"
+      name="search_DisplayUserLogsForm"
+      path="/search_DisplayUserLogs"
+      scope="request"
+      type="com.secureinfosoft.admin.Search_DisplayUserLogsAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/Displaytag_DisplayUserLogs.jsp"
+        redirect="true" />
+    </action>
+    <action path="/displayUserMarks" type="com.secureinfosoft.admin.DisplayUserMarksAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/search_DisplayUserMarks.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="search_DisplayUserMarksForm"
+      input="admin/search_DisplayUserMarks.jsp"
+      name="search_DisplayUserMarksForm"
+      path="/search_DisplayUserMarks"
+      scope="request"
+      type="com.secureinfosoft.admin.Search_DisplayUserMarksAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/displayTag_DisplayUserMarks.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="displayTag_DisplayUserMarksForm"
+      input="admin/displayTag_DisplayUserMarks.jsp"
+      name="displayTag_DisplayUserMarksForm"
+      path="/displayTag_DisplayUserMarks"
+      scope="request"
+      type="com.secureinfosoft.admin.DisplayTag_DisplayUserMarksAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/Displaytag_DisplayUserMarks2.jsp"
+        redirect="true" />
+    </action>
+    <action path="/displayCoordinatorLog" type="com.secureinfosoft.admin.DisplayCoordinatorLogAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="success"
+        path="/admin/DisplayCoordinatorLog.jsp"
+        redirect="true" />
+    </action>
+    <action
+      attribute="coordinatorLoginForm"
+      input="coordinator/coordinatorLogin.jsp"
+      name="coordinatorLoginForm"
+      path="/coordinatorLogin"
+      scope="request"
+      type="com.secureinfosoft.coordinator.CoordinatorLoginAction">
+      <set-property property="cancellable" value="true" />
+      <forward
+        name="failure"
+        path="/coordinator/coordinatorLogin.jsp?msg=Error...ID or Passwd is incorrect"
+        redirect="true" />
+      <forward
+        name="success"
+        path="/coordinator/home.jsp"
+        redirect="true" />
+    </action>
+    
+    
+    
+    
+    
+
+  </action-mappings>
+
+  <message-resources parameter="com.secureinfosoft.struts.ApplicationResources" />
+</struts-config>
+
